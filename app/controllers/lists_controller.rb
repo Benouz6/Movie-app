@@ -4,9 +4,10 @@ class ListsController < ApplicationController
     @lists = List.all
   end
 
-  #Get movies to movies#show
+  #Get movies to lists#show
   def show
-    @lists = List.find(params[:id])
+    @list = List.find(params[:id])
+    @movies = Movie.all
   end
 
   def new
@@ -19,6 +20,10 @@ class ListsController < ApplicationController
     redirect_to lists_path
   end
 
+  def edit
+    @list = List.find(params[:id])
+    @movies = Movie.all
+  end
 
   # Show movies from particular list
 

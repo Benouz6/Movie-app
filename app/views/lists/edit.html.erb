@@ -1,10 +1,10 @@
-<h1>All the Lists</h1>
+<h1>Add movie to your playlist </h1>
+
+<h2>Select the movie you want to add</h2>
 
 <ul>
-  <% @lists.each do |list| %>
+  <% @movies.each do |list| %>
   <li><%= link_to list.name, list_path(list) %></li>
   <li><%= link_to "Add movie in your playlist", edit_list_path(list) %></li>
   <% end %>
 </ul>
-
-<%= link_to "Create a list", new_list_path %>
