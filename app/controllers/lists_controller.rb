@@ -10,6 +10,7 @@ class ListsController < ApplicationController
     @movies = Movie.all
   end
 
+  # GET /lists/new
   def new
     @list = List.new
   end
@@ -21,8 +22,10 @@ class ListsController < ApplicationController
   end
 
   def edit
-    @list = List.find(params[:id])
     @movies = Movie.all
+    @list = List.find(params[:id])
+    @movie = Movie.find(params[:id])
+
   end
 
   # Show movies from particular list
@@ -33,3 +36,15 @@ class ListsController < ApplicationController
     params.require(:list).permit(:name)
   end
 end
+
+
+  def create
+    @plant = Plant.new(plant_params)
+    @garden = Garden.find(params[:garden_id])
+    @plant.garden = @garden
+    if @plant.save
+      redirect_to garden_path(@garden)
+    else
+      render 'gardens/show'
+    end
+  end
