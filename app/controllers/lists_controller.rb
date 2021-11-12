@@ -36,15 +36,3 @@ class ListsController < ApplicationController
     params.require(:list).permit(:name)
   end
 end
-
-
-  def create
-    @plant = Plant.new(plant_params)
-    @garden = Garden.find(params[:garden_id])
-    @plant.garden = @garden
-    if @plant.save
-      redirect_to garden_path(@garden)
-    else
-      render 'gardens/show'
-    end
-  end

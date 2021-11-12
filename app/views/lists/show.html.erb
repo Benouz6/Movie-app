@@ -1,6 +1,6 @@
 <h1><%= @list.name.capitalize %></h1>
 
-<h2><%= link_to "Add a bookmark", bookmarks_new_path%></h2>
+<h2><%= link_to "Add a bookmark", new_list_bookmark_path(@list)%></h2>
 
 <ul>
 <% @movies.each do |movie| %>
