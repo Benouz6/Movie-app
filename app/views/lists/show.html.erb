@@ -1,11 +1,12 @@
 <h1><%= @list.name.capitalize %></h1>
 
 <h2><%= link_to "Add a bookmark", new_list_bookmark_path(@list)%></h2>
-<h2><%="Delete a bookmark" %></h2>
 
 <ul>
 <% @list.movies.each do |movie| %>
 <li><%= movie.title%></li>
-<li><%= @bookmark.comment%></li>
+<li><%= link_to "Delete the bookmark", list_path(@list), method: :delete, data: {confirm:"Are you sure?"}  %></li>
 <% end %>
 </ul>
+
+<h2><%= link_to 'Back to the list', root_path%></h2>
