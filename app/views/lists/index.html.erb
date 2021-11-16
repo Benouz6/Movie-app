@@ -1,12 +1,17 @@
-<div class="container">
-  <div class="pic">
-    <h1>All the Lists</h1>
-  </div>
-</div>
-<ul>
-  <% @lists.each do |list| %>
-  <li><%= link_to list.name, list_path(list) %></li>
-  <% end %>
-</ul>
 
+<div class="pic">
+  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images-assets.nasa.gov/image/PIA19830/PIA19830~medium.jpg);">
+    <h1>Welcome in <strong>Your cinema</strong>!</h1>
+    <p>Change your life and learn to code at one of our campuses around the world.</p>
+    <a class="btn btn-flat" href="#">Apply now</a>
+</div>
+
+</div>
+<div class="mb-3">
+  <ul>
+    <% @lists.each do |list| %>
+    <li><%= link_to list.name, list_path(list) %></li>
+    <% end %>
+  </ul>
+</div>
 <%= link_to "Create a list", new_list_path %>

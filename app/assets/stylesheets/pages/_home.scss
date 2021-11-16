@@ -1,6 +1,19 @@
 // Specific CSS for your home-page
-.pic {
-  background-image: asset-url('bg.jpg');
-  color: white;
-  width: 100%;
+.navbar-lewagon {
+  justify-content: space-between;
+  background: white;
+}
+
+.navbar-lewagon .navbar-collapse {
+  flex-grow: 0;
+}
+
+.navbar-lewagon .navbar-brand img {
+  width: 40px;
+}
+
+
+.container {
+  position: relative;
+  min-height: 100vh;
 }
