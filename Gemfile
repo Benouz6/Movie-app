@@ -54,3 +54,6 @@ gem 'simple_form'
 
 # Devise
 gem 'devise'
+
+#Cloudinary
+gem 'dotenv-rails', groups: [:development, :test]
