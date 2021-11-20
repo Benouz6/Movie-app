@@ -1,5 +1,7 @@
 <h1><%= @list.name.capitalize %></h1>
 
+<h2><%= link_to "Delete the list", list_path(@list), method: :delete, data: {confirm:"Are you sure?"} %></h2>
+
 <h2><%= link_to "Add a bookmark", new_list_bookmark_path(@list)%></h2>
 
 <ul>

@@ -1,4 +1,5 @@
 class ListsController < ApplicationController
+  before_action :set_list, only: [:show, :edit, :destroy]
   # Get movies to movie#index
   def index
     @lists = List.all
@@ -6,7 +7,6 @@ class ListsController < ApplicationController
 
   #Get movies to lists#show
   def show
-    @list = List.find(params[:id])
     @movies = Movie.all
     # @bookmark = Bookmark.find(params[:id])
   end
@@ -27,9 +27,12 @@ class ListsController < ApplicationController
 
   def edit
     @movies = Movie.all
-    @list = List.find(params[:id])
     @movie = Movie.find(params[:id])
+  end
 
+  def destroy
+    @list.destroy
+    redirect_to lists_path
   end
 
   # Show movies from particular list
@@ -38,5 +41,9 @@ class ListsController < ApplicationController
 
   def list_params
     params.require(:list).permit(:name)
+  end
+
+  def set_list
+    @list = List.find(params[:id])
   end
 end
