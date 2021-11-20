@@ -1,6 +1,7 @@
 
 <div class="pic">
-  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images-assets.nasa.gov/image/PIA19830/PIA19830~medium.jpg);">
+  <%= cl_image_tag("https://res.cloudinary.com/dmnmqtpct/image/upload/v1637445363/photo-1536440136628-849c177e76a1_msgsdn.jpg",
+      width: 400, height: 300, crop: :fill) %>
     <h1>Welcome in <strong>Your cinema</strong>!</h1>
     <p>Change your life and learn to code at one of our campuses around the world.</p>
     <a class="btn btn-flat" href="#">Apply now</a>
